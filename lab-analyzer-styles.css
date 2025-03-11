@@ -533,6 +533,21 @@ body {
     .card-title {
         font-size: 1.75rem;
     }
+
+    /* Fix for third card inner image to fit properly in its container */
+    .image-card-wrapper:nth-child(3) .inner-image {
+        object-fit: cover;
+        max-height: 100%;
+        max-width: 100%;
+    }
+    
+    /* Adjust container for third card to better fit the chat image */
+    .image-card-wrapper:nth-child(3) .inner-image-container {
+        aspect-ratio: 1.2/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 /* Image Cards Section */
