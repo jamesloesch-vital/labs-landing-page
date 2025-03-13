@@ -465,6 +465,7 @@ body {
         padding: 4rem 1rem;
     }
 
+    /* Make inner image bigger on mobile for better visibility */
     .inner-image-container {
         width: 65%;
     }
@@ -481,9 +482,9 @@ body {
         opacity: 1;
     }
     
-    /* Make inner image bigger on mobile for better visibility */
-    .inner-image-container {
-        width: 85%;
+    /* Make inner images fill their containers on mobile */
+    .inner-image {
+        object-fit: cover;
     }
     
     .image-card-wrapper.in-viewport .inner-image-container {
@@ -705,6 +706,11 @@ body {
 
     .card-description {
         font-size: 1rem;
+    }
+    
+    /* Make inner images fill their containers on mobile */
+    .inner-image {
+        object-fit: cover;
     }
 }
 
@@ -1201,6 +1207,11 @@ body {
         /* Adjust inner images for very small screens */
         .inner-image-container {
             width: 90%;
+        }
+        
+        /* Make inner images fill the container */
+        .inner-image {
+            object-fit: cover;
         }
         
         /* Adjust card dimensions for better mobile display */
