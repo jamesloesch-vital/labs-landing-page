@@ -548,6 +548,27 @@ body {
         align-items: center;
         justify-content: center;
     }
+
+    .company-logo {
+        height: 26px;
+        margin-bottom: 0.5rem;
+    }
+
+    .check, .x-mark {
+        padding: 0.75rem;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-logo {
+        height: 22px;
+    }
+
+    .check, .x-mark {
+        padding: 0.5rem;
+        font-size: 1.25rem;
+    }
 }
 
 /* Image Cards Section */
@@ -1243,5 +1264,245 @@ body {
     .form-message {
         font-size: 0.8rem;
         padding: 8px;
+    }
+}
+
+/* Membership Section */
+.membership-section {
+    padding: 6rem 2rem;
+    background-color: #fff;
+}
+
+.membership-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.membership-title {
+    font-family: 'STIXTwoText', serif;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color: #111;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.pricing-table-container {
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2rem;
+    overflow: hidden;
+}
+
+/* Pricing Table Styles */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.pricing-table th {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+}
+
+.pricing-table th:first-child {
+    width: 50%;
+    text-align: left;
+}
+
+.plan-header {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.membership {
+    background-color: #EDE9E1;
+}
+
+.pricing-table td {
+    padding: 1.2rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.pricing-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: #333;
+}
+
+.membership-cell {
+    font-weight: 600;
+    background-color: rgba(237, 233, 225, 0.3);
+}
+
+.pricing-row td {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 1.5rem 1rem;
+}
+
+.medication-note {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+.section-header {
+    background-color: #444;
+    color: white;
+    font-weight: 600;
+}
+
+.section-header td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    color: white !important;
+}
+
+.section-header td * {
+    color: white;
+}
+
+.pricing-table i.fas.fa-check {
+    color: #2ecc71;
+    font-size: 1.4rem;
+}
+
+.pricing-table i.fas.fa-times {
+    color: #e74c3c;
+    font-size: 1.4rem;
+}
+
+.pricing-cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.cta-description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive styles for pricing table */
+@media (max-width: 1024px) {
+    .membership-title {
+        font-size: 2.4rem;
+    }
+    
+    .pricing-table-container {
+        padding: 1.5rem;
+    }
+    
+    .pricing-table {
+        font-size: 1rem;
+    }
+    
+    .pricing-row td {
+        font-size: 1.2rem;
+    }
+    
+    .plan-header {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .membership-section {
+        padding: 4rem 1rem;
+    }
+    
+    .membership-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .pricing-table-container {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+    
+    .pricing-table {
+        font-size: 0.9rem;
+    }
+    
+    .pricing-table th, 
+    .pricing-table td {
+        padding: 1rem 0.5rem;
+    }
+    
+    .pricing-row td {
+        font-size: 1.1rem;
+    }
+    
+    .plan-header {
+        font-size: 1.1rem;
+    }
+    
+    .medication-note {
+        font-size: 0.7rem;
+    }
+    
+    .pricing-table i.fas.fa-check,
+    .pricing-table i.fas.fa-times {
+        font-size: 1.2rem;
+    }
+    
+    .cta-description {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-table {
+        font-size: 0.8rem;
+    }
+    
+    .pricing-table th, 
+    .pricing-table td {
+        padding: 0.8rem 0.3rem;
+    }
+    
+    .pricing-row td {
+        font-size: 1rem;
+    }
+    
+    .plan-header {
+        font-size: 1rem;
+    }
+    
+    .medication-note {
+        font-size: 0.65rem;
+    }
+    
+    .pricing-table i.fas.fa-check,
+    .pricing-table i.fas.fa-times {
+        font-size: 1rem;
+    }
+    
+    .section-header td {
+        padding: 0.6rem 0.5rem;
+        font-size: 0.8rem;
+    }
+    
+    .cta-description {
+        font-size: 0.9rem;
     }
 }
