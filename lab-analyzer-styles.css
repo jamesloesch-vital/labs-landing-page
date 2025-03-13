@@ -467,9 +467,16 @@ body {
 
     /* Make inner image bigger on mobile for better visibility */
     .inner-image-container {
-        width: 65%;
+        width: 75%;
+        aspect-ratio: auto;
+        max-height: 80%;
     }
 
+    /* Remove object-fit: cover and use contain instead to show full images */
+    .inner-image {
+        object-fit: contain;
+    }
+    
     /* Mobile image card enhancements */
     .image-card-wrapper {
         transform: translateY(15px);
@@ -480,26 +487,6 @@ body {
     .image-card-wrapper.in-viewport {
         transform: translateY(0);
         opacity: 1;
-    }
-    
-    /* Make inner images fill their containers on mobile */
-    .inner-image {
-        object-fit: cover;
-    }
-    
-    .image-card-wrapper.in-viewport .inner-image-container {
-        animation: fadeInScale 0.6s ease forwards;
-    }
-    
-    @keyframes fadeInScale {
-        0% {
-            opacity: 0;
-            transform: translate(-50%, -50%) scale(0.95);
-        }
-        100% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1.1);
-        }
     }
     
     /* Stagger the animation of multiple cards */
@@ -537,17 +524,19 @@ body {
 
     /* Fix for third card inner image to fit properly in its container */
     .image-card-wrapper:nth-child(3) .inner-image {
-        object-fit: cover;
+        object-fit: contain;
         max-height: 100%;
         max-width: 100%;
     }
     
     /* Adjust container for third card to better fit the chat image */
     .image-card-wrapper:nth-child(3) .inner-image-container {
-        aspect-ratio: 1.2/1;
+        aspect-ratio: auto;
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 75%;
+        max-height: 80%;
     }
 
     .company-logo {
@@ -1206,12 +1195,14 @@ body {
         
         /* Adjust inner images for very small screens */
         .inner-image-container {
-            width: 90%;
+            width: 85%;
+            aspect-ratio: auto;
+            max-height: 80%;
         }
         
         /* Make inner images fill the container */
         .inner-image {
-            object-fit: cover;
+            object-fit: contain;
         }
         
         /* Adjust card dimensions for better mobile display */
@@ -1228,8 +1219,18 @@ body {
 
 /* For mobile, show inner image when in viewport */
 .image-card-wrapper.in-viewport .inner-image-container {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.1);
+    animation: fadeInScale 0.6s ease forwards;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
 }
 
 /* Form message styles */
