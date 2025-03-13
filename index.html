@@ -12,12 +12,14 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://tally.so" crossorigin>
+    <link rel="preload" href="https://tally.so/widgets/embed.js" as="script">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="lab-analyzer-styles.css">
-    <script src="https://tally.so/widgets/embed.js"></script>
+    <script src="https://tally.so/widgets/embed.js" async></script>
 </head>
 <body>
     <!-- Mobile Email Signup Modal -->
@@ -50,7 +52,7 @@
                     Be among the first to experience Vital Protocol's new lab analysis platform for men's health. Get in-depth insights into your labs, personalized action plans, and discounted access to licensed physicians and prescription pharmaceuticals for men's health issues.
                 </p>
                 <div class="cta-container">
-                    <iframe data-tally-src="https://tally.so/embed/mZDPKv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="120" frameborder="0" marginheight="0" marginwidth="0" title="Labs Landing Page Leads"></iframe>
+                    <iframe data-tally-src="https://tally.so/embed/mZDPKv?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="eager" width="100%" height="120" frameborder="0" marginheight="0" marginwidth="0" title="Labs Landing Page Leads"></iframe>
                 </div>
             </div>
             
@@ -390,10 +392,14 @@
     <script src="lab-analyzer-script.js"></script>
     
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Tally embeds
+        // Initialize Tally as soon as the script is loaded
+        if (window.Tally) {
             Tally.loadEmbeds();
-        });
+        } else {
+            document.addEventListener('DOMContentLoaded', function() {
+                Tally.loadEmbeds();
+            });
+        }
     </script>
 </body>
 </html>
